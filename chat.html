@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Pennywise AI — clear, practical answers for finance and everyday questions.">
+  <title>Pennywise AI — Your helpful assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="chat.css">
+</head>
+<body class="chat-page">
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="index.html"><b>p</b><span>Pennywise<small>PERSONAL FINANCE</small></span></a>
+      <p class="side-label">WORKSPACE</p>
+      <nav><a href="index.html">◫ Dashboard overview</a><a class="active" href="chat.html">✦ Pennywise AI</a></nav>
+      <div class="side-bottom"><p>🔒 <b>Privacy first</b><small>Your dashboard data is not shared automatically.</small></p><button id="themeBtn" type="button">☾ Switch appearance</button></div>
+    </aside>
+    <main class="chat-main">
+      <header class="chat-topbar"><div><small class="eyebrow">YOUR PERSONAL ASSISTANT</small><h1>Pennywise AI <span class="online-dot" aria-label="ready"></span></h1><p class="muted">Clear explanations. Practical next steps. More than one option when needed.</p></div><div class="top-actions"><a class="btn soft" href="index.html">← Back to dashboard</a><button class="btn soft" id="clearChat" type="button">Clear chat</button></div></header>
+      <section class="chat-workspace panel">
+        <div class="chat-controls"><div class="mode-picker"><label for="chatMode">Assistant mode</label><select id="chatMode"><option value="both">Finance + general</option><option value="finance">Personal finance</option><option value="general">General questions</option></select></div><div class="privacy-label">🔒 Financial details are never added automatically</div></div>
+        <div id="messages" class="messages" role="log" aria-live="polite" aria-label="Conversation">
+          <article class="message-card assistant"><div class="message-avatar">✦</div><div class="message-content"><strong>Pennywise AI</strong><p>Hi! I’m Pennywise AI. Ask me about money, learning, coding, writing, or everyday problems. I’ll explain things in simple language and suggest practical options.</p><p><b>Your privacy matters:</b> I cannot see your dashboard transactions. If you want financial advice based on your own numbers, you can choose to include details for a message below.</p><div class="suggestions"><button type="button" data-prompt="Explain budgeting to a beginner with a simple example.">Help me make a budget</button><button type="button" data-prompt="Give me a practical step-by-step plan to start saving money as a student.">How can I save as a student?</button><button type="button" data-prompt="Explain APIs and how a frontend talks to a backend in simple words.">Explain a coding concept</button></div></div></article>
+        </div>
+        <div id="status" class="chat-status" aria-live="polite"></div>
+        <form id="chatForm" class="composer">
+          <label class="sr-only" for="messageInput">Your message</label><textarea id="messageInput" rows="2" maxlength="6000" placeholder="Ask a question… (Shift + Enter for a new line)" required></textarea>
+          <div class="composer-bottom"><div class="context-area"><label class="context-check"><input type="checkbox" id="includeContext"> Include the details I enter below with this message</label><textarea id="manualContext" rows="2" maxlength="2500" placeholder="Optional: type only the financial details you choose to share, e.g. monthly income ₹12,000 and rent ₹4,000. Nothing is prefilled."></textarea><small>Only sent when the checkbox is checked. Avoid account numbers, passwords, or other sensitive identifiers.</small></div><button class="btn primary send-btn" id="sendBtn" type="submit">Send ↗</button></div>
+        </form>
+      </section>
+      <footer class="chat-footer"><span>AI can make mistakes. Check important information.</span><span>Gemini API · API key stays on the server</span></footer>
+    </main>
+  </div>
+  <script src="chat.js"></script>
+</body></html>
