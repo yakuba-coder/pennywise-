@@ -32,7 +32,7 @@ module.exports = async function handler(req, res) {
   const contents = messages.map(item => ({ role: item.role, parts: [{ text: item.text }] }));
 
   try {
-    const model = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
+    const model = process.env.GEMINI_MODEL || 'gemini-3.8-flash';
     const upstream = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'x-goog-api-key': apiKey },
